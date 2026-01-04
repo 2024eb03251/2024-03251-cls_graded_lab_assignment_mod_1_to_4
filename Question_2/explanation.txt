@@ -1,0 +1,29 @@
+Command: mkdir ~/documents
+Explanation: I created a new directory named documents within my home directory to organize project-related files.
+
+Command: cd ~/documents; nano plan.txt
+Explanation: I navigated to the documents directory and used the nano editor to create the file plan.txt, then saved sample content in it.
+
+Command: cat plan.txt
+Explanation: I displayed the contents of plan.txt to verify that the data was written successfully.
+
+Command: ls -l plan.txt; whoami
+Explanation: I viewed the file’s metadata using ls -l and confirmed my active username with whoami to verify file ownership.
+
+Command: cp plan.txt plan_copy.txt
+Explanation: I created a copy of plan.txt named plan_copy.txt and verified the presence of both files.
+
+Command: cd ~; mv documents project_documents
+Explanation: I renamed the documents directory to project_documents to more accurately represent the project structure.
+
+Command: mkdir ~/project_documents/archive
+Explanation: I created an archive subdirectory within project_documents to store archived or older files.
+
+Command: mv ~/project_documents/plan_copy.txt ~/project_documents/archive/
+Explanation: I moved plan_copy.txt into the archive directory to keep the main directory organized.
+
+Command: ls -R ~/project_documents
+Explanation: I listed all files and subdirectories recursively to display the complete directory hierarchy.
+
+Command: realpath ~/project_documents/archive/plan_copy.txt
+Explanation: I displayed the absolute path of plan_copy.txt after relocating it to the archive directory.
