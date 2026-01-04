@@ -1,0 +1,29 @@
+Command: uptime
+Explanation: The uptime command reports the system’s running duration, the number of active users, and the current load averages.
+
+Command: ps -u $(whoami) -o pid,cmd,%cpu,%mem --sort=-%cpu
+Explanation: I listed all processes owned by my user account along with their process ID, command name, CPU usage, and memory usage, sorted by CPU consumption.
+
+Command: ps -u $(whoami) -o pid,cmd,%cpu --sort=-%cpu | head -n 2
+Explanation: I displayed the processes with the highest CPU usage among those running under my account to identify the top CPU-consuming process.
+
+Command: sleep 300 & ; jobs -l
+Explanation: I launched a background process using sleep and verified that it was running by checking the job list.
+
+Command: nice -n 10 sleep 300 & ; ps -o pid,ni,cmd -u $(whoami) | grep sleep
+Explanation: I started a process with an adjusted niceness value and then displayed its niceness to demonstrate how scheduling priority can be modified.
+
+Command: free -h
+Explanation: I displayed system memory usage in a human-readable format, showing total, used, and available memory.
+
+Command: df -h ~
+Explanation: I checked disk space utilization for the filesystem containing my home directory, including total, used, and available space.
+
+Command: echo $SHELL
+Explanation: I printed the SHELL environment variable to identify the shell currently configured for my session.
+
+Command: uname -a > system_report.txt; lscpu >> system_report.txt
+Explanation: I redirected kernel and CPU-related system information into system_report.txt for documentation purposes.
+
+Command: ncdu ~
+Explanation: I used ncdu to interactively analyze disk usage across directories within my home folder.
