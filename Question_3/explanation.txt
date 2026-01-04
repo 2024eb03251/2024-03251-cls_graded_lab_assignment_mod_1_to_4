@@ -1,0 +1,29 @@
+Command: echo "This is sample data for link testing." > sample_data.txt
+Explanation: I created a file named sample_data.txt in my home directory and wrote sample content into it.
+
+Command: ln sample_data.txt sample_hard.txt
+Explanation: I created a hard link called sample_hard.txt that references the same underlying file data as sample_data.txt.
+
+Command: ln -s sample_data.txt sample_soft.txt
+Explanation: I created a symbolic link named sample_soft.txt that points to the path of sample_data.txt.
+
+Command: ls -i sample_data.txt sample_hard.txt sample_soft.txt
+Explanation: I displayed the inode numbers of the original file, its hard link, and the symbolic link to compare their inode assignments.
+
+Explanation (inode analysis):
+sample_data.txt and sample_hard.txt share the same inode because a hard link refers to the same file data. The symbolic link has a different inode since it stores only a reference to the original file’s path.
+
+Command: stat sample_data.txt
+Explanation: I used the stat command to view detailed metadata of the file, including permissions, ownership, size, and timestamps.
+
+Command: du -sh ~
+Explanation: I checked the total disk space used by my home directory in a human-readable format.
+
+Command: ls -lh ~
+Explanation: I listed the files in my home directory along with their sizes displayed in human-readable units.
+
+Command: rm sample_soft.txt; cat sample_data.txt
+Explanation: I removed the symbolic link and confirmed that the original file remained accessible and unchanged.
+
+Command: df -h
+Explanation: I displayed the overall filesystem disk space usage in a human-readable format.
